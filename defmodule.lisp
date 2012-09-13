@@ -30,13 +30,10 @@
                            :test #'equal)))
 
 (defparameter *basedir*
-  #P"/home/feolan/kafgsk.ru/")
-;; (asdf:component-pathname (asdf:find-system '#:kafgsk)))
+  (asdf:component-pathname (asdf:find-system '#:kafgsk)))
 
 (defun path (relative)
   (merge-pathnames relative *basedir*))
 
-;; (closure-template:compile-template :common-lisp-backend (path "templates.htm"))
-(closure-template:compile-template
- :common-lisp-backend (path "templates.htm"))
+(closure-template:compile-template  :common-lisp-backend (path "templates.htm"))
 
