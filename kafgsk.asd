@@ -1,5 +1,3 @@
-(require 'swank)
-
 (asdf:defsystem #:kafgsk
   :version      "0.0.2"
   :author       "rigidus <i.am.rigidus@gmail.com>"
@@ -17,4 +15,7 @@
                  (:file "teachers")
                  (:file "render")
                  (:file "routes")
-                 (:file "init")))
+                 (:file "init")
+                 (:static-file "daemon.conf")
+                 (:static-file "daemon.lisp")
+                 (:static-file "daemon.sh")))

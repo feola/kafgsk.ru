@@ -21,7 +21,10 @@
 
 (in-package #:kafgsk)
 
-(let ((path '(:RELATIVE "kafgsk")))
+(let ((path (list :RELATIVE
+                  ;; "repo/kafgsk.ru"
+                  (sb-posix:getcwd))
+        ))
   (setf asdf:*central-registry*
         (remove-duplicates (append asdf:*central-registry*
                                    (list (merge-pathnames
@@ -35,5 +38,5 @@
 (defun path (relative)
   (merge-pathnames relative *basedir*))
 
-(closure-template:compile-template  :common-lisp-backend (path "templates.htm"))
+(closure-template:compile-template :common-lisp-backend (path "templates.htm"))
 
